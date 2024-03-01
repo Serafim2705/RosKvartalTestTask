@@ -1,0 +1,60 @@
+﻿@page
+@model RosKvartalTestTask.Pages.Register.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>InspectionsRegister</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="InspectionsRegister.Id" />
+            <div class="form-group">
+                <label asp-for="InspectionsRegister.SubjectName" class="control-label"></label>
+                <input asp-for="InspectionsRegister.SubjectName" class="form-control" />
+                <span asp-validation-for="InspectionsRegister.SubjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InspectionsRegister.SubjectNumber" class="control-label"></label>
+                <input asp-for="InspectionsRegister.SubjectNumber" class="form-control" />
+                <span asp-validation-for="InspectionsRegister.SubjectNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InspectionsRegister.Purpose" class="control-label"></label>
+                <input asp-for="InspectionsRegister.Purpose" class="form-control" />
+                <span asp-validation-for="InspectionsRegister.Purpose" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InspectionsRegister.Status" class="control-label"></label>
+                <select asp-for="InspectionsRegister.Status" class="form-control"></select>
+                <span asp-validation-for="InspectionsRegister.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InspectionsRegister.Result" class="control-label"></label>
+                <select asp-for="InspectionsRegister.Result" class="form-control"></select>
+                <span asp-validation-for="InspectionsRegister.Result" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InspectionsRegister.CheckDate" class="control-label"></label>
+                <input asp-for="InspectionsRegister.CheckDate" class="form-control" />
+                <span asp-validation-for="InspectionsRegister.CheckDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
