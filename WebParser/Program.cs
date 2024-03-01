@@ -68,8 +68,6 @@ using (HttpClient client = new HttpClient())
                 string result = item.GetProperty("hasOffence").GetRawText(); // result
 
 
-                
-                //Console.WriteLine(id);
                 var subject = "Default";
                 try
                 {
@@ -82,7 +80,7 @@ using (HttpClient client = new HttpClient())
                 }
                 catch 
                 {
-                    Console.WriteLine("Отсутсвует информация о субъекте");
+                    Console.WriteLine("Отсутствует информация о субъекте");
                     subject = "Default";
                 }
                 var ogrn = "Default";
@@ -97,7 +95,7 @@ using (HttpClient client = new HttpClient())
                 }
                 catch
                 {
-                    Console.WriteLine("Отсутсвует огрн");
+                    Console.WriteLine("Отсутствует огрн");
                     ogrn = "Default";
                 }
                 Console.WriteLine(id.ToString() + " " + date + " " + status + " " + subject + " " + ogrn + " " + result);
@@ -132,22 +130,11 @@ using (HttpClient client = new HttpClient())
                 context.InspectionsRegister.Add(entity);
 
 
-
             }
-
 
             context.SaveChanges();
 
-
-
-
-            //var entity = new InspectionsRegister { SubjectName = "Значение1" };
-
-            ////context.YourEntities.Add(entity);
-            //context.InspectionsRegister.Add(entity);
-            //context.SaveChanges();
         }
-
 
     }
     else
@@ -155,9 +142,6 @@ using (HttpClient client = new HttpClient())
         Console.WriteLine("Ошибка: " + response.StatusCode);
     }
 
-    
-
-    //RosKvartalTestTaskContext()
 
    
 }
